@@ -1,6 +1,5 @@
 MODDIR=${0%/*}
 TARGET_PATH=""
-SUPPORT="0"
 CHECK="/product/etc
 /vendor/etc"
 for path in $CHECK; do
