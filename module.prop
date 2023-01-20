@@ -1,7 +1,7 @@
 id=MIUI_AOD_Freely
 name=MIUI AOD Freely
-version=v2.0.0915
-versionCode=2
+version=v3.0.0120
+versionCode=8
 author=siergtc
 description=View https://github.com/ianchb/MIUI-AOD-Freely for more.
 updateJson=https://update.ap.icu/maodf
