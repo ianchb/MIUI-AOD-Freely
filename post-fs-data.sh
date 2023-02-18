@@ -11,5 +11,11 @@ done
 CHANGE=$MODDIR/system/$TARGET_PATH
 mkdir -p $CHANGE
 rm $CHANGE/*
-cp -f $TARGET_PATH/* $CHANGE/
-sed -i 's/"is_only_support_keycode_goto">true</"is_only_support_keycode_goto">false</g' $CHANGE/*.xml
+if [ ! -f $MODDIR/../mff.marker ]; then
+    cp -f $TARGET_PATH/* $CHANGE/
+    sed -i 's/"is_only_support_keycode_goto">true</"is_only_support_keycode_goto">false</g' $CHANGE/*.xml
+else
+    sed -i 's/"is_only_support_keycode_goto">true</"is_only_support_keycode_goto">false</g' $MODDIR/../MIUI_Flash_Freely/system/$TARGET_PATH/*.xml
+    cp -f $MODDIR/../MIUI_Flash_Freely/system/$TARGET_PATH/* $CHANGE/
+fi
+touch $MODDIR/../maodf.marker
