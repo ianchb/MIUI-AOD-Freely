@@ -13,9 +13,9 @@ mkdir -p $CHANGE
 rm $CHANGE/*
 if [ ! -f $MODDIR/../mff.marker ]; then
     cp -f $TARGET_PATH/* $CHANGE/
-    touch $MODDIR/../maodf.marker
+    sed -i 's/"is_only_support_keycode_goto">true</"is_only_support_keycode_goto">false</g' $CHANGE/*.xml
 else
+    sed -i 's/"is_only_support_keycode_goto">true</"is_only_support_keycode_goto">false</g' $MODDIR/../MIUI_Flash_Freely/system/$TARGET_PATH/*.xml
     cp -f $MODDIR/../MIUI_Flash_Freely/system/$TARGET_PATH/* $CHANGE/
-    rm -f $MODDIR/../mff.marker
 fi
-sed -i 's/"is_only_support_keycode_goto">true</"is_only_support_keycode_goto">false</g' $CHANGE/*.xml
+touch $MODDIR/../maodf.marker
